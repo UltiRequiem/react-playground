@@ -14,7 +14,6 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
-  mode: 'development',
   devServer: {
     contentBase: fm('dist'),
     compress: true,
