@@ -1,27 +1,34 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
+require('dotenv').config()
+
 const path = require('path')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-/** @param {string} dir */
-const fm = (dir) => path.join(__dirname, dir)
+const config = {
+  PORT: Number(process.env.PORT),
+  COMPRESS: process.env.MODE === 'development',
+  MODE: process.env.MODE,
+  DIST: path.join(__dirname, 'dist'),
+}
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
   entry: './index.js',
   output: {
-    path: fm('dist'),
+    path: config.DIST,
     filename: 'main.js',
   },
+  mode: config.MODE,
   resolve: {
     extensions: ['.js', '.jsx'],
   },
   devServer: {
-    contentBase: fm('dist'),
-    compress: true,
-    port: 8080,
+    contentBase: config.DIST,
+    compress: process.env.MODE === 'development',
+    port: config.PORT,
   },
   module: {
     rules: [
