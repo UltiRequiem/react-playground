@@ -1,8 +1,12 @@
+/* eslint-disable import/no-extraneous-dependencies */
+
+const path = require('path')
+
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 /** @param {string} dir */
-const fm = (dir) => require('path').join(__dirname, dir)
+const fm = (dir) => path.join(__dirname, dir)
 
 /** @type {import('webpack').Configuration} */
 module.exports = {

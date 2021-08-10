@@ -1,6 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import App from './snippets/functionalHelloWorld'
+import App from './snippets/MouseTracker'
 
-ReactDOM.render(<App myName="Zero" />, document.getElementById('root'))
+ReactDOM.render(
+  <App color="green" text="Custom Button" />,
+  document.getElementById('root')
+)
