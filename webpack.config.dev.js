@@ -3,6 +3,7 @@
 const path = require('path')
 
 const Dotenv = require('dotenv-webpack')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const HtmlPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
@@ -77,6 +78,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),
+    new FaviconsWebpackPlugin(fm('./public/favicon.ico')),
 
     new Dotenv({
       path: './.env',

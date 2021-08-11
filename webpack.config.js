@@ -2,6 +2,7 @@
 
 const path = require('path')
 
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
 const LicensePlugin = require('webpack-license-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -75,6 +76,8 @@ module.exports = {
       filename: '[name].css',
     }),
     new CleanWebpackPlugin(),
+
+    new FaviconsWebpackPlugin(fm('./public/favicon.ico')),
     new Dotenv({
       path: './.env',
       safe: true,
