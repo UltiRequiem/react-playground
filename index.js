@@ -1,9 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import App from './snippets/MouseTracker'
+import App from './fragments/css/StyledComponents'
 
-ReactDOM.render(
-  <App color="green" text="Custom Button" />,
-  document.getElementById('root')
-)
+ReactDOM.render(<App />, document.getElementById('root'))
