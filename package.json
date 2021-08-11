@@ -3,8 +3,9 @@
   "description": "My React Playground",
   "main": "index.js",
   "scripts": {
-    "start": "npx webpack serve",
-    "build": "npx webpack",
+    "start": "npx webpack serve --config webpack.config.dev.js",
+    "dev": "npx webpack --config webpack.config.dev.js",
+    "build": "npx webpack  --config webpack.config.js",
     "test": "npx jest"
   },
   "repository": {
@@ -41,6 +42,7 @@
     "browserify-zlib": "^0.2.0",
     "buffer": "^6.0.3",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "copy-webpack-plugin": "^9.0.1",
     "crypto-browserify": "^3.12.0",
     "css-loader": "^6.2.0",
     "css-minimizer-webpack-plugin": "^3.0.2",

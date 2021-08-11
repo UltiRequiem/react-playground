@@ -3,13 +3,9 @@
 const path = require('path')
 
 const Dotenv = require('dotenv-webpack')
-const LicensePlugin = require('webpack-license-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 /** @param {string} dir */
 const fm = (dir) => path.join(__dirname, dir)
@@ -20,8 +16,10 @@ module.exports = {
   output: {
     path: fm('dist'),
     filename: '[name].[contenthash].js',
+    assetModuleFilename: 'assets/images/[hash][ext][query]',
   },
-  mode: 'production',
+  mode: 'development',
+  devtool: 'inline-source-map',
   resolve: {
     extensions: ['.js', '.jsx'],
     fallback: {
@@ -47,6 +45,11 @@ module.exports = {
       https: require.resolve('http-browserify'),
     },
   },
+  devServer: {
+    contentBase: fm('dist'),
+    compress: false,
+    port: 3000,
+  },
   module: {
     rules: [
       {
@@ -67,14 +70,14 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
+    new HtmlPlugin({
       template: './public/index.html',
       filename: './index.html',
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),
-    new CleanWebpackPlugin(),
+
     new Dotenv({
       path: './.env',
       safe: true,
@@ -84,8 +87,4 @@ module.exports = {
       defaults: false,
     }),
   ],
-  optimization: {
-    minimize: true,
-    minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
-  },
 }
