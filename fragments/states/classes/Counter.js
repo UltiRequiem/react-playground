@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 
-function Example() {
+function App() {
   const [count, setCount] = useState(1)
 
-  const styles = {
+  const buttonStyles = {
     color: 'green',
     margin: '5px',
   }
@@ -12,14 +12,14 @@ function Example() {
     <div>
       <h1> Total count: {count}</h1>
       <p> Click the buttons to change the state!</p>
-      <button style={styles} onClick={() => setCount(count + 1)}>
+      <button style={buttonStyles} onClick={() => setCount(count + 1)}>
         Increment One
       </button>
-      <button style={styles} onClick={() => setCount(count - 1)}>
+      <button style={buttonStyles} onClick={() => setCount(count - 1)}>
         Decrease One
       </button>
     </div>
   )
 }
 
-export default Example
+export default App
