@@ -14,6 +14,9 @@ module.exports = {
   ],
   settings: {
     'import/resolver': 'webpack',
+    react: {
+      version: 'detect',
+    },
   },
   parserOptions: {
     ecmaVersion: 2021,

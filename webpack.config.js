@@ -1,14 +1,12 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 const path = require('path')
-
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
 const LicensePlugin = require('webpack-license-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
-const CopyPlugin = require('copy-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
@@ -79,13 +77,14 @@ module.exports = {
 
     new FaviconsWebpackPlugin(fm('./public/favicon.ico')),
     new Dotenv({
-      path: './.env',
       safe: true,
       allowEmptyValues: true,
       systemvars: true,
       silent: true,
       defaults: false,
     }),
+    new FaviconsWebpackPlugin(fm('./public/favicon.ico')),
+    new LicensePlugin(),
   ],
   optimization: {
     minimize: true,

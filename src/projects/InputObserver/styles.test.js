@@ -1,11 +1,10 @@
 /* eslint-disable no-undef */
 
 import React from 'react'
-import styled from 'styled-components'
 import renderer from 'react-test-renderer'
 import 'jest-styled-components'
 
-import { Label, Input, GrettingLayout, H1, P } from './styles'
+import { Label, Input, GrettingLayout, H1 } from './styles'
 
 test('Label Test', () => {
   const tree = renderer.create(<Label />).toJSON()
