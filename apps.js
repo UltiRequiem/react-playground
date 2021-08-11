@@ -1,7 +1,7 @@
 /*
   Change `proyectToLoad` and then run `yarn start` to se the project on 
   http://localhost:3000/
- */
+*/
 
 const APPS = {
   fragments: {
@@ -9,10 +9,14 @@ const APPS = {
       ExampleInline: 'fragments/css/ExampleInLine',
       StyledComponents: 'fragments/css/StyledComponents',
     },
-    states: {},
+    states: {
+      classes: {},
+      funcs: {},
+    },
   },
   projects: {
     CounterButton: 'projects/CounterButton',
+    MovieTheather: 'projects/MovieTheather',
     InputObserver: 'projects/InputObserver',
   },
   snippets: {
@@ -22,9 +26,6 @@ const APPS = {
   },
 }
 
-// const projectToLoad = APPS.fragments.css.StyledComponents
-// const projectToLoad = APPS.snippets.MouseTracker
-// const projectToLoad = APPS.snippets.classHelloWorld
-const projectToLoad = APPS.snippets.functionalHelloWorld
+const projectToLoad = APPS.projects.MovieTheather
 
 export default projectToLoad

@@ -74,7 +74,6 @@ module.exports = {
       filename: '[name].css',
     }),
     new CleanWebpackPlugin(),
-
     new FaviconsWebpackPlugin(fm('./public/favicon.ico')),
     new Dotenv({
       safe: true,
