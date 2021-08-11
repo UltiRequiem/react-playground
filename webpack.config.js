@@ -2,6 +2,8 @@
 
 require('dotenv').config()
 
+const Dotenv = require('dotenv-webpack')
+
 const path = require('path')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -22,12 +24,16 @@ module.exports = {
     filename: 'main.js',
   },
   mode: config.MODE,
+  devtool: 'inline-source-map',
   resolve: {
     extensions: ['.js', '.jsx'],
+    alias: {
+      path: require.resolve('path-browserify'),
+    },
   },
   devServer: {
     contentBase: config.DIST,
-    compress: process.env.MODE === 'development',
+    compress: config.COMPRESS,
     port: config.PORT,
   },
   module: {
@@ -56,6 +62,15 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
+    }),
+
+    new Dotenv({
+      path: './.env',
+      safe: true,
+      allowEmptyValues: true,
+      systemvars: true,
+      silent: true,
+      defaults: false,
     }),
   ],
 }

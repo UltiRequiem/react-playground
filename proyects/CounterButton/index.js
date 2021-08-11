@@ -1,9 +1,18 @@
-import ReactDOM from 'react-dom'
+import React, { useState } from 'react'
 
-import App from './app'
+import Button from './styles'
 
-function loadApp() {
-  ReactDOM.render(<App />, document.getElementById('root'))
+function App() {
+  const [count, setCount] = useState(1)
+
+  return (
+    <div>
+      <h1> Total count: {count}</h1>
+      <p> Click the buttons to change the state!</p>
+      <Button onClick={() => setCount(count + 1)}>Increment One</Button>
+      <Button onClick={() => setCount(count - 1)}>Decrease One</Button>
+    </div>
+  )
 }
 
-export default loadApp
+export default App
