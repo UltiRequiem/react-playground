@@ -1,6 +1,10 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+// Uncomment to see the project!
 
-import App from './fragments/states/classes/Input'
+// import loadApp from './proyects/CounterButton'
+import loadApp from './proyects/InputObserver'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+if (typeof loadApp === 'function') {
+  loadApp()
+} else {
+  console.log("You haven't imported any application yet!")
+}

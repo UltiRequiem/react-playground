@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "start": "npx webpack serve",
-    "build": "npx webpack"
+    "build": "npx webpack",
+    "test": "npx jest"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "@babel/core": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-react": "^7.14.5",
+    "@types/react-test-renderer": "^17.0.1",
     "babel-loader": "^8.2.2",
     "babel-plugin-styled-components": "^1.13.2",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
@@ -43,9 +45,13 @@
     "eslint-plugin-react": "^7.24.0",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.2",
+    "jest": "^27.0.6",
+    "jest-styled-components": "^7.0.5",
     "mini-css-extract-plugin": "^2.2.0",
     "prettier": "^2.3.2",
     "prettier-plugin-jsdoc": "^0.3.23",
+    "react-test-render": "^1.1.2",
+    "react-test-renderer": "^17.0.2",
     "sass": "^1.37.5",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
