@@ -1,14 +1,16 @@
+/* eslint-disable class-methods-use-this */
+
 import React from 'react'
 import PropTypes from 'prop-types'
 
-class HelloWorld extends React.Component {
+class App extends React.Component {
   render() {
-    return <p>Hello {this.props.myName}</p>
+    return <p>Hello World using Classes!</p>
   }
 }
 
-HelloWorld.propTypes = {
+App.propTypes = {
   myName: PropTypes.string,
 }
 
-export default HelloWorld
+export default App

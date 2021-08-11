@@ -1,5 +1,3 @@
-import React from 'react'
-
 import styled from 'styled-components'
 
 const Title = styled.h1`
@@ -12,10 +10,5 @@ const Wrapper = styled.section`
   padding: 4em;
   background: papayawhip;
 `
-const App = () => (
-  <Wrapper>
-    <Title>Hello World, this is my first styled component!</Title>
-  </Wrapper>
-)
 
-export default App
+export { Title, Wrapper }

@@ -3,12 +3,9 @@
 import React, { Suspense, lazy } from 'react'
 import ReactDOM from 'react-dom'
 
-const APPS = {
-  counterButton: 'projects/CounterButton',
-  inputObserver: 'projects/InputObserver',
-}
+import projectToLoad from './apps'
 
-const App = lazy(() => import(`./src/${APPS.counterButton}`))
+const App = lazy(() => import(`./src/${projectToLoad}`))
 
 ReactDOM.render(
   <Suspense fallback={<div>Loading...</div>}>
