@@ -6,7 +6,10 @@
     "start": "npx webpack serve --config webpack.config.dev.js",
     "dev": "npx webpack --config webpack.config.dev.js",
     "build": "npx webpack  --config webpack.config.js",
-    "test": "npx jest"
+    "test": "npx jest",
+    "format": "npx prettier --write '**/**/*.js'",
+    "lint": "npx eslint . --ext .js",
+    "precommit": "npm run lint && npm run format"
   },
   "repository": {
     "type": "git",
