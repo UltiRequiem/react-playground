@@ -2,10 +2,10 @@
 
 require('dotenv').config()
 
-const Dotenv = require('dotenv-webpack')
-
 const path = require('path')
 
+const Dotenv = require('dotenv-webpack')
+const LicensePlugin = require('webpack-license-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
@@ -33,12 +33,21 @@ module.exports = {
       stream: require.resolve('stream-browserify'),
       util: require.resolve('util/'),
       buffer: require.resolve('buffer'),
+      crypto: require.resolve('crypto-browserify'),
+      https: require.resolve('http-browserify'),
+      zlib: require.resolve('browserify-zlib'),
+      vm: require.resolve('vm-browserify'),
     },
     alias: {
       fs: require.resolve('browserify-fs'),
       path: require.resolve('path-browserify'),
       stream: require.resolve('stream-browserify'),
+      util: require.resolve('util/'),
       buffer: require.resolve('buffer'),
+      crypto: require.resolve('crypto-browserify'),
+      zlib: require.resolve('browserify-zlib'),
+      vm: require.resolve('vm-browserify'),
+      https: require.resolve('http-browserify'),
     },
   },
   devServer: {
