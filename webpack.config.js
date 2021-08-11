@@ -27,8 +27,18 @@ module.exports = {
   devtool: 'inline-source-map',
   resolve: {
     extensions: ['.js', '.jsx'],
-    alias: {
+    fallback: {
+      fs: require.resolve('browserify-fs'),
       path: require.resolve('path-browserify'),
+      stream: require.resolve('stream-browserify'),
+      util: require.resolve('util/'),
+      buffer: require.resolve('buffer'),
+    },
+    alias: {
+      fs: require.resolve('browserify-fs'),
+      path: require.resolve('path-browserify'),
+      stream: require.resolve('stream-browserify'),
+      buffer: require.resolve('buffer'),
     },
   },
   devServer: {

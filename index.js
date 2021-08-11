@@ -4,19 +4,15 @@ import React, { Suspense, lazy } from 'react'
 import ReactDOM from 'react-dom'
 
 const APPS = {
-  counterButton: 'proyects/CounterButton',
-  inputObserver: 'proyects/InputObserver',
+  counterButton: 'CounterButton',
+  inputObserver: 'InputObserver',
 }
 
-function loadApp(path) {
-  import(path).then((App) => {
-    ReactDOM.render(
-      <Suspense fallback={<div>Loading...</div>}>
-        <App />
-      </Suspense>,
-      document.getElementById('root')
-    )
-  })
-}
+const App = lazy(() => import(`./proyects/${APPS.counterButton}`))
 
-loadApp(APPS.inputObserver)
+ReactDOM.render(
+  <Suspense fallback={<div>Loading...</div>}>
+    <App />
+  </Suspense>,
+  document.getElementById('root')
+)

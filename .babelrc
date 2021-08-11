@@ -1,14 +1,6 @@
 {
   "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "useBuiltIns": false,
-        "targets": {
-          "browsers": ["last 2 versions"]
-        }
-      }
-    ],
+    "@babel/preset-env",
     [
       "@babel/preset-react",
       {
@@ -16,11 +8,5 @@
       }
     ]
   ],
-  "plugins": [
-    "babel-plugin-styled-components",
-    "@babel/plugin-transform-runtime",
-    "@babel/syntax-dynamic-import",
-    "transform-runtime",
-    "transform-async-to-generator"
-  ]
+  "plugins": ["babel-plugin-styled-components"]
 }
