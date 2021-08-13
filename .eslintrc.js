@@ -25,9 +25,7 @@ module.exports = {
   rules: {
     quotes: ['warn', 'single', 'avoid-escape'],
     'no-plusplus': 'off',
-    'on-var': 'off',
     'max-classes-per-file': 'off',
     'no-console': 'off',
-    'react/react-in-jsx-scope': 'off',
   },
 }

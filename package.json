@@ -9,7 +9,7 @@
     "test": "npx jest",
     "format": "npx prettier --write '**/**/*.js'",
     "lint": "npx eslint . --ext .js",
-    "precommit": "npm run lint && npm run format"
+    "fix": "yarn run lint && yarn run format"
   },
   "repository": {
     "type": "git",
