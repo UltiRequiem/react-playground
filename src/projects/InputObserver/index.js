@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import { Label, Input, GrettingLayout, H1, P } from './styles'
 
+/** @returns The Input Observer App */
 const App = () => {
   const [name, setName] = useState(null)
 
